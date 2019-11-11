@@ -2,6 +2,7 @@ package com.nssoft.instagramtest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -17,8 +18,7 @@ public class LoginActivity extends AppCompatActivity {
 
     CallbackManager callbackManager;
     LoginButton loginButton;
-    TextView tv_name, tv_email;
-
+    Context context;
 
 
     @Override
@@ -26,8 +26,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        tv_name=findViewById(R.id.tv_name);
-        tv_email=findViewById(R.id.tv_email);
 
         callbackManager = CallbackManager.Factory.create();
 
@@ -40,7 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                tv_name.setText(Profile.getCurrentProfile().getName());
+//                Intent intent=new Intent(context, MainActivity.class);
+//                startActivity(intent);
             }
 
             @Override
