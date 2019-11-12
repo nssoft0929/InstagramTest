@@ -2,4 +2,6 @@
     <string name="app_name">InstagramTest</string>
     <string name="facebook_app_id">2874887155878068</string>
     <string name="fb_login_protocol_scheme">fb2874887155878068</string>
+    <string name="et_ID">전화번호, 이메일 주소 또는 사용자 이름</string>
+    <string name="et_PW">비밀번호</string>
 </resources>
