@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setHomeAsUpIndicator(R.drawable.ic_camera_alt_black_24dp);
 
 
+
         frag_home=new Frag_home();
         frag_search=new Frag_search();
         frag_add=new Frag_add();
