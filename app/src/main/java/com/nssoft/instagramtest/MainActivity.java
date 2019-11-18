@@ -8,6 +8,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            int permissionChecked=checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            if (permissionChecked== PackageManager.PERMISSION_DENIED){
+                String[] permissions=new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                requestPermissions(permissions, 1);
+            }
+        }
 
         bnv=findViewById(R.id.bnv);
         Toolbar toolbar=findViewById(R.id.toolbar);
