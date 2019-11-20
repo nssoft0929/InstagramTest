@@ -9,14 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class Frag_add extends Fragment {
-
-    View view;
+public class Frag_tab_photo extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.frag_add, container, false);
+        View view=inflater.inflate(R.layout.frag_tab_photo, container, false);
 
 
         return view;

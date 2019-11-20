@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar_home"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#f7f7f7">
@@ -17,7 +17,7 @@
         android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@+id/toolbar_home"
         android:background="#ffffff">
     </FrameLayout>
 

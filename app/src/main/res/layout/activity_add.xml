@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_add"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#ffffff"
+        app:titleTextColor="#000000">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_add"
+        android:layout_above="@+id/layout_tab"
+        android:background="#ffffff">
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/layout_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabIndicatorGravity="bottom"
+        app:tabSelectedTextColor="#000000"
+        app:tabIndicatorColor="#000000"
+        android:background="#ffffff"
+        app:tabTextColor="#aaaaaa">
+    </com.google.android.material.tabs.TabLayout>
+
+</RelativeLayout>

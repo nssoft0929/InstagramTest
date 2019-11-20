@@ -3,12 +3,12 @@ package com.nssoft.instagramtest;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.ActionMenuItem;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,10 +24,8 @@ public class MainActivity extends AppCompatActivity {
     FragmentTransaction ft;
     Frag_home frag_home;
     Frag_search frag_search;
-    Frag_add frag_add;
     Frag_activity frag_activity;
     Frag_account frag_account;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         bnv=findViewById(R.id.bnv);
-        Toolbar toolbar=findViewById(R.id.toolbar);
+        Toolbar toolbar=findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar=getSupportActionBar();
@@ -52,16 +50,15 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setHomeAsUpIndicator(R.drawable.ic_camera_alt_black_24dp);
 
 
-
         frag_home=new Frag_home();
         frag_search=new Frag_search();
-        frag_add=new Frag_add();
         frag_activity=new Frag_activity();
         frag_account=new Frag_account();
 
         setFrag(0);
 
         bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            Intent intent;
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
@@ -72,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                         setFrag(1);
                         break;
                     case R.id.bnv_add:
-                        setFrag(2);
+                        startActivity(new Intent(MainActivity.this, AddActivity.class));
                         break;
                     case R.id.bnv_favorite:
                         setFrag(3);
@@ -102,11 +99,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 1:
                 ft.replace(R.id.frame, frag_search);
-                ft.addToBackStack(null);
-                ft.commit();
-                break;
-                case 2:
-                ft.replace(R.id.frame, frag_add);
                 ft.addToBackStack(null);
                 ft.commit();
                 break;
@@ -141,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar, menu);
+        getMenuInflater().inflate(R.menu.toolbar_home, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
