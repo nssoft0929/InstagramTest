@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileEditActivity"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#f7f7f7"
+        app:titleTextColor="#000000">
+    </androidx.appcompat.widget.Toolbar>
+    
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/user_default"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="프로필 사진 변경"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#0091d7"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:hintTextColor="#dddddd">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_Username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="UserName"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bio"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="@style/Divider"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="프로필 정보"
+        android:textColor="#000000"
+        android:paddingLeft="16dp"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이메일 주소"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:hint="이메일 주소를 입력하세요"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화번호"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/et_phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:hint="전화번호를 입력하세요"/>
+
+
+</LinearLayout>

@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_camera_alt_black_24dp);
+        actionBar.setTitle("Instagram");
+
+
+
 
 
         frag_home=new Frag_home();
@@ -58,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         setFrag(0);
 
         bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            Intent intent;
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
