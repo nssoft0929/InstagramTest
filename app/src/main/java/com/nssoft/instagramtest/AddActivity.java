@@ -6,8 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -21,6 +25,19 @@ public class AddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
+
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            int permissionChecked=checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            int permissionResult=checkSelfPermission(Manifest.permission.CAMERA);
+            if (permissionChecked== PackageManager.PERMISSION_DENIED){
+                String[] permissions=new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                requestPermissions(permissions, 1);
+            }
+            if (permissionResult== PackageManager.PERMISSION_DENIED){
+                String[] permissions=new String[]{Manifest.permission.CAMERA};
+                requestPermissions(permissions, 2);
+            }
+        }
 
         Toolbar toolbar=findViewById(R.id.toolbar_add);
         setSupportActionBar(toolbar);
@@ -66,9 +83,20 @@ public class AddActivity extends AppCompatActivity {
 
 
 
+    }//onCreate
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-
+        switch (requestCode){
+            case 2:
+                if (grantResults[0]==PackageManager.PERMISSION_DENIED||grantResults[1]==PackageManager.PERMISSION_DENIED){
+                    Toast.makeText(this, "카메라 권한 승인이 필요합니다.", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                break;
+        }
     }
 
     @Override

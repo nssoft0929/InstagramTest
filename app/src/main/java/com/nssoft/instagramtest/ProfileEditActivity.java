@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
@@ -69,7 +70,17 @@ public class ProfileEditActivity extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 break;
+            case R.id.check:
+                //TODO 회원정보 저장
+                finish();
+                break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_profile, menu);
+        return true;
     }
 }

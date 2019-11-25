@@ -34,12 +34,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        app:hintTextColor="#dddddd">
+        app:hintTextColor="#cccccc"
+        android:textColorHint="#cccccc">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"/>
+            android:hint="Name"
+            app:hintTextColor="#cccccc"
+            android:textColor="#000000"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -47,24 +50,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp">
+        android:layout_marginRight="8dp"
+        android:textColorHint="#cccccc"
+        app:hintTextColor="#cccccc">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_Username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="UserName"/>
+            android:hint="UserName"
+            android:textColor="#000000"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp">
+        android:layout_marginRight="8dp"
+        android:textColorHint="#cccccc"
+        app:hintTextColor="#cccccc">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_bio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bio"/>
+            android:hint="Bio"
+            android:textColor="#000000"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <View
@@ -86,7 +95,8 @@
         android:layout_height="wrap_content"
         android:text="이메일 주소"
         android:paddingLeft="16dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:textColor="#cccccc"/>
 
     <EditText
         android:id="@+id/et_email"
@@ -94,14 +104,17 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:hint="이메일 주소를 입력하세요"/>
+        android:hint="이메일 주소를 입력하세요"
+        android:textColorHint="#cccccc"
+        android:textColor="#000000"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="전화번호"
         android:paddingLeft="16dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:textColor="#cccccc"/>
 
     <EditText
         android:id="@+id/et_phoneNumber"
@@ -109,7 +122,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:hint="전화번호를 입력하세요"/>
+        android:hint="전화번호를 입력하세요"
+        android:textColorHint="#cccccc"
+        android:textColor="#000000"
+        android:inputType="number"/>
 
 
 </LinearLayout>

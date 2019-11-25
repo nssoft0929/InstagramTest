@@ -2,6 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
+    <item android:title="confirm"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_check_black_24dp"
+        android:id="@+id/check"/>
 
 </menu>
