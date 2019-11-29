@@ -30,43 +30,54 @@ public class Frag_tab_photo extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.frag_tab_photo, container, false);
+
         iv_capture=view.findViewById(R.id.capture_photo);
         iv_changeCamera=view.findViewById(R.id.iv_change_camera);
 
         iv_capture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cv.camera.takePicture(null, null, new Camera.PictureCallback() {
-                    @Override
-                    public void onPictureTaken(byte[] data, Camera camera) {
-                        FileOutputStream fos=null;
-                        File path= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-                        if (!path.exists()) path.mkdirs();
-                        SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddhhmmss");
-                        String fileName="IMG_"+sdf.format(new Date())+".jpg";
-                        File file=new File(path, fileName);
+                cv.takepicture();
+//                cv.camera.takePicture(null, null, new Camera.PictureCallback() {
+//                    @Override
+//                    public void onPictureTaken(byte[] data, Camera camera) {
+//                        FileOutputStream fos=null;
+//                        File path= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+//                        if (!path.exists()) path.mkdirs();
+//                        SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddhhmmss");
+//                        String fileName="IMG_"+sdf.format(new Date())+".jpg";
+//                        File file=new File(path, fileName);
+//
+//                        try {
+//                            fos=new FileOutputStream(file);
+//                            fos.write(data[0]);
+//                            fos.flush();
+//                            fos.close();
+//
+//                            Intent intent=new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+//                            intent.setData(Uri.fromFile(file));
+//                            getContext().sendBroadcast(intent);
+//                        } catch (FileNotFoundException e) {
+//                            e.printStackTrace();
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                });
+            }
+        });//capture onClickListner
 
-                        try {
-                            fos=new FileOutputStream(file);
-                            fos.write(data[0]);
-                            fos.flush();
-                            fos.close();
+        iv_changeCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                            Intent intent=new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                            intent.setData(Uri.fromFile(file));
-                            getContext().sendBroadcast(intent);
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
             }
         });
 
         return view;
-    }
+    }//onCreateView
+
+
 
 
 }
