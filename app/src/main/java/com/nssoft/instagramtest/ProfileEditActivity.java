@@ -6,12 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -72,7 +74,16 @@ public class ProfileEditActivity extends AppCompatActivity {
                 break;
             case R.id.check:
                 //TODO 회원정보 저장
-                finish();
+                if (et_userName.getText().length()==0){
+                    Toast.makeText(this, "사용자 이름을 입력해야 합니다.", Toast.LENGTH_SHORT).show();
+                    break;
+                }else if (et_userName.getText().length()>0){
+                    SharedPreferences pref=this.getSharedPreferences("Data", MODE_PRIVATE);
+                    SharedPreferences.Editor editor=pref.edit();
+                    editor.putString("UserName", et_userName.getText().toString());
+                    editor.commit();
+                    finish();
+                }
                 break;
         }
         return super.onOptionsItemSelected(item);

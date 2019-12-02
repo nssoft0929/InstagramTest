@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         bnv=findViewById(R.id.bnv);
         Toolbar toolbar=findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
@@ -39,10 +37,6 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_camera_alt_black_24dp);
         actionBar.setTitle("Instagram");
-
-
-
-
 
         frag_home=new Frag_home();
         frag_search=new Frag_search();

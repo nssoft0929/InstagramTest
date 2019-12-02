@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -51,8 +53,8 @@ public class Frag_tab_gallery extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getContext(), NewPostActivity.class);
-                startActivity(intent);
                 intent.putExtra("imgUri", imgPath);
+                startActivity(intent);
 
             }
         });
@@ -67,6 +69,7 @@ public class Frag_tab_gallery extends Fragment {
             imageView.setImageURI(imageUri);
             imgPath=getRealPathFromUri(imageUri);
 
+            Toast.makeText(getContext(), imgPath+"", Toast.LENGTH_SHORT).show();
 
             getActivity().invalidateOptionsMenu();
             btn_write.setEnabled(true);
